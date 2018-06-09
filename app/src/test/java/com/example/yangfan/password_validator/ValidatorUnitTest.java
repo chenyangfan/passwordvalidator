@@ -24,4 +24,25 @@ public class ValidatorUnitTest {
     @Test
     public void MoreThanEight(){
         assertEquals(valid.validate("pweravsdd"),2);}
+
+    @Test
+    public void eightNumbers(){
+        assertEquals(valid.validate("12345678"),3);}
+
+    @Test
+    public void eightNumbersAndallLower(){
+        assertEquals(valid.validate("12345678da"),3);}
+    @Test
+    public void eightNumbersAndCapAndLower(){
+        assertEquals(valid.validate("12345678daL"),4);}
+    @Test
+    public void AllCap(){
+        assertEquals(valid.validate("QWERTTYDF"),2);}
+    @Test
+    public void allSpecialCharacter(){
+        assertEquals(valid.validate("!@#%%^%$##@@"),3);}
+    @Test
+    public void AllFiveCriterion(){
+        assertEquals(valid.validate("12345678.daL"),5);}
+
 }
