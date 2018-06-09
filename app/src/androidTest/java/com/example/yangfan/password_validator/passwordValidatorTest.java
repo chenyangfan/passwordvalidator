@@ -21,35 +21,32 @@ public class passwordValidatorTest {
             = new ActivityTestRule<MainActivity>(MainActivity.class);
     @Test
     public void ClickButton()throws Exception {
+        //one test for strong password
         String string = "12345678.daL";
         onView(withId(R.id.editText)).perform(typeText(string));
         onView(withId(R.id.editText)).perform(closeSoftKeyboard());
         onView(withId(R.id.button)).perform(click());
-        //closeSoftKeyboard();
-        //Thread.sleep(1000);
         onView(withId(R.id.textView)).check(matches(withText("Strong")));
 
-        //Thread.sleep(1000);
+        //clear the editText after finished check method and the
+        //the thread sleeps for one second
         onView(withId(R.id.editText)).perform(clearText());
-
         Thread.sleep(1000);
 
         String string3 = "12345678da";
         onView(withId(R.id.editText)).perform(typeText(string3));
         onView(withId(R.id.editText)).perform(closeSoftKeyboard());
         onView(withId(R.id.button)).perform(click());
-        //closeSoftKeyboard();
-        //Thread.sleep(1000);
-       // Thread.sleep(1000);
         onView(withId(R.id.textView)).check(matches(withText("not Strong")));
 
+        //sleeps here
         onView(withId(R.id.editText)).perform(clearText());
-
         Thread.sleep(1000);
 
         String string2 = "";
         onView(withId(R.id.editText)).perform(typeText(string2));
         onView(withId(R.id.editText)).perform(closeSoftKeyboard());
         onView(withId(R.id.button)).perform(click());
+        //tests over
     }
 }
