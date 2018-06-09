@@ -12,8 +12,10 @@ public class ValidatorUnitTest {
         assertEquals(valid.validate("password"),1);}
 
     @Test
+    //This output of this test will be 2 because we added "has both
+    //Capital and lower case letters, passed : >=8 as well
     public void equalsIgnoreCase_Password(){
-        assertEquals(valid.validate("PaSswOrd"),1);}
+        assertEquals(valid.validate("PaSswOrd"),2);}
 
     @Test
     public void lessThanEight(){
