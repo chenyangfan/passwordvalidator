@@ -22,6 +22,10 @@ public class MainActivity extends AppCompatActivity {
         int numPassed = valid.validate(e);
         if(numPassed == 5)
             passwordStrength = "Strong";
+        else if(numPassed==3 ||numPassed ==4)
+            passwordStrength = "not Strong";
+        else
+            passwordStrength = "invalid";
         t1.setText(passwordStrength);
     }
 }
